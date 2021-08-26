@@ -4,16 +4,25 @@
 
 **Get All**
 
+
 Method : "GET"
+
 Path : "/fuel"
 
 **Get By ID**
+
+
 Method : "GET"
+
 Path : "/fuel/:id"
 
 **Create**
+
+
 Method : "POST"
+
 Path : "/fuel"
+
 Body : {
     "fuel_liter": 2,
     "fuel_type": "Premium 2",
@@ -21,8 +30,12 @@ Body : {
 }
 
 **Update**
+
+
 Method : "PUT"
+
 Path : "/fuel"
+
 Body : {
     "id": 41,
     "fuel_liter": 1,
@@ -31,8 +44,12 @@ Body : {
 }
 
 **Delete**
+
+
 Method : "DELETE"
+
 Path : "/fuel"
+
 Body : {
     "id": 41
 }
