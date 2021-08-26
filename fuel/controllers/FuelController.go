@@ -1,19 +1,19 @@
 package controllers
 
 import (
-	"echo-framework/article/services"
-	"echo-framework/helper"
-	"echo-framework/models"
+	"aiforesee/fuel/services"
+	"aiforesee/helper"
+	"aiforesee/models"
 	"net/http"
 	"strconv"
 
 	"github.com/labstack/echo/v4"
 )
 
-//GetArticle ... Get all article
-func GetListArticle(c echo.Context) error {
+//GetFuel ... Get all fuel
+func GetListFuel(c echo.Context) error {
 
-	data, err := services.ListArticle()
+	data, err := services.ListFuel()
 	if err != nil {
 		respErr := helper.ResponseError(map[string]interface{}{"message": err.Error()})
 		return c.JSON(http.StatusBadRequest, respErr)
@@ -23,11 +23,11 @@ func GetListArticle(c echo.Context) error {
 	}
 }
 
-//GetArticleByID ... Get all article by id
-func GetArticleByID(c echo.Context) error {
+//GetFuelByID ... Get all fuel by id
+func GetFuelByID(c echo.Context) error {
 	id := c.Param("id")
 	idInt, _ := strconv.Atoi(id)
-	data, err := services.DetailArticle(int32(idInt))
+	data, err := services.DetailFuel(int32(idInt))
 	if err != nil {
 		respErr := helper.ResponseError(map[string]interface{}{"message": err.Error()})
 		return c.JSON(http.StatusNotFound, respErr)
@@ -37,13 +37,11 @@ func GetArticleByID(c echo.Context) error {
 	}
 }
 
-//CreateArticle ... Create article
-func CreateArticle(c echo.Context) error {
-	var dataArticle models.Article
-	c.Bind(&dataArticle)
-	mappingToken := helper.ParsingTokenJWT(c)
-	dataArticle.AuthorID = int64(mappingToken["id"].(float64))
-	createdData, err := services.CreateArticle(dataArticle)
+//CreateFuel ... Create fuel
+func CreateFuel(c echo.Context) error {
+	var dataFuel models.Fuel
+	c.Bind(&dataFuel)
+	createdData, err := services.CreateFuel(dataFuel)
 	if err != nil {
 		respErr := helper.ResponseError(map[string]interface{}{"message": err.Error()})
 		return c.JSON(http.StatusBadRequest, respErr)
@@ -53,11 +51,11 @@ func CreateArticle(c echo.Context) error {
 	}
 }
 
-//UpdateArticle ... Update article
-func UpdateArticle(c echo.Context) error {
-	var dataArticle models.Article
-	c.Bind(&dataArticle)
-	updatedData, err := services.UpdateArticle(dataArticle)
+//UpdateFuel ... Update fuel
+func UpdateFuel(c echo.Context) error {
+	var dataFuel models.Fuel
+	c.Bind(&dataFuel)
+	updatedData, err := services.UpdateFuel(dataFuel)
 	if err != nil {
 		respErr := helper.ResponseError(map[string]interface{}{"message": err.Error()})
 		return c.JSON(http.StatusBadRequest, respErr)
@@ -67,11 +65,11 @@ func UpdateArticle(c echo.Context) error {
 	}
 }
 
-//DeleteArticle ... Delete article
-func DeleteArticle(c echo.Context) error {
-	var dataArticle models.Article
-	c.Bind(&dataArticle)
-	deletedData, err := services.DeleteArticle(dataArticle)
+//DeleteFuel ... Delete fuel
+func DeleteFuel(c echo.Context) error {
+	var dataFuel models.Fuel
+	c.Bind(&dataFuel)
+	deletedData, err := services.DeleteFuel(dataFuel)
 	if err != nil {
 		respErr := helper.ResponseError(map[string]interface{}{"message": err.Error()})
 		return c.JSON(http.StatusBadRequest, respErr)

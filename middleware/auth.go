@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"echo-framework/helper"
+	"aiforesee/helper"
 	"fmt"
 	"net/http"
 	"time"
