@@ -2,16 +2,16 @@
 
 ## List API
 
-** Get All **
+**Get All**
 
 Method : "GET"
 Path : "/fuel"
 
-** Get By ID **
+**Get By ID**
 Method : "GET"
 Path : "/fuel/:id"
 
-** Create **
+**Create**
 Method : "POST"
 Path : "/fuel"
 Body : {
@@ -20,7 +20,7 @@ Body : {
     "fuel_price": 20000
 }
 
-** Update **
+**Update**
 Method : "PUT"
 Path : "/fuel"
 Body : {
@@ -30,7 +30,7 @@ Body : {
     "fuel_price": 11000
 }
 
-** Delete **
+**Delete**
 Method : "DELETE"
 Path : "/fuel"
 Body : {
