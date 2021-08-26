@@ -24,6 +24,8 @@ func main() {
 	if err != nil {
 		fmt.Println("Status:", err)
 	}
+
+	// automatically delete all records on fuels table and generate 20 default data
 	services.GenerateDataFuel()
 	e := echo.New()
 	fuel.Routes(e)

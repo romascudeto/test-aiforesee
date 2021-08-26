@@ -1,15 +1,5 @@
 [
   {
-    "method": "GET",
-    "path": "/fuel",
-    "name": "aiforesee/fuel/controllers.GetListFuel"
-  },
-  {
-    "method": "GET",
-    "path": "/fuel/:id",
-    "name": "aiforesee/fuel/controllers.GetFuelByID"
-  },
-  {
     "method": "POST",
     "path": "/fuel",
     "name": "aiforesee/fuel/controllers.CreateFuel"
@@ -23,5 +13,15 @@
     "method": "DELETE",
     "path": "/fuel",
     "name": "aiforesee/fuel/controllers.DeleteFuel"
+  },
+  {
+    "method": "GET",
+    "path": "/fuel",
+    "name": "aiforesee/fuel/controllers.GetListFuel"
+  },
+  {
+    "method": "GET",
+    "path": "/fuel/:id",
+    "name": "aiforesee/fuel/controllers.GetFuelByID"
   }
 ]

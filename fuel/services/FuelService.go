@@ -30,24 +30,23 @@ func DeleteFuel(fuel models.Fuel) (dataRet models.Fuel, err error) {
 	return fuel, err
 }
 func GenerateDataFuel() {
-	// repositories.DeleteAll()
-	// basePricePremium := 6450
-	// basePricePertalite := 7650
-	// liter := 1
-	// for liter <= 20 {
-	// 	fuelPremium := models.Fuel{
-	// 		FuelType:  "Premium",
-	// 		FuelPrice: liter * basePricePremium,
-	// 		FuelLiter: liter,
-	// 	}
-	// 	fuelPertalite := models.Fuel{
-	// 		FuelType:  "Pertalite",
-	// 		FuelPrice: liter * basePricePertalite,
-	// 		FuelLiter: liter,
-	// 	}
-	// 	repositories.Create(&fuelPremium)
-	// 	repositories.Create(&fuelPertalite)
-	// 	liter++
-	// }
-
+	repositories.DeleteAll()
+	basePricePremium := 6450
+	basePricePertalite := 7650
+	liter := 1
+	for liter <= 20 {
+		fuelPremium := models.Fuel{
+			FuelType:  "Premium",
+			FuelPrice: liter * basePricePremium,
+			FuelLiter: liter,
+		}
+		fuelPertalite := models.Fuel{
+			FuelType:  "Pertalite",
+			FuelPrice: liter * basePricePertalite,
+			FuelLiter: liter,
+		}
+		repositories.Create(&fuelPremium)
+		repositories.Create(&fuelPertalite)
+		liter++
+	}
 }
